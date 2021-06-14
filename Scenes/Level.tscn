@@ -1,0 +1,470 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/PlatformRightEdge.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PlatformLeftEdge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Level.cs" type="Script" id=6]
+[ext_resource path="res://Scenes/Fire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Images/main.jpg" type="Texture" id=8]
+[ext_resource path="res://Scenes/SmallPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SmallSquarePlatform.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/HotPlatform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Snowflake.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Stone.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Fridge.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/PilotGame.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Seesaw.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Music/PetyaPetr - Ice Cube Theme.ogg" type="AudioStream" id=17]
+[ext_resource path="res://BackgroundMusic.cs" type="Script" id=18]
+[ext_resource path="res://Images/sa.jpg" type="Texture" id=19]
+[ext_resource path="res://Images/platform1_leftedge.png" type="Texture" id=20]
+[ext_resource path="res://Images/platform1_rightedge.png" type="Texture" id=21]
+[ext_resource path="res://Images/halfmelted_cube.png" type="Texture" id=22]
+[ext_resource path="res://Images/puddle.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/SnowflakeExplosion.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Music/PetyaPetr - Under Ground.ogg" type="AudioStream" id=25]
+
+[node name="Level" type="Node2D"]
+position = Vector2( -1, 0 )
+script = ExtResource( 6 )
+
+[node name="PilotGameControl" parent="." instance=ExtResource( 15 )]
+visible = false
+modulate = Color( 0.945098, 0.941176, 1, 0.784314 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9792.0
+margin_top = -18.0
+margin_right = 11008.0
+margin_bottom = 1026.0
+rect_scale = Vector2( 0.8, 0.8 )
+
+[node name="Fridge" parent="." instance=ExtResource( 14 )]
+position = Vector2( 10673, 834.719 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160.776, 252 )
+Push = 20
+HalfNormalTexture = ExtResource( 22 )
+NotNormalTexture = ExtResource( 23 )
+MeltingCoefficient = -30.0
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160.776, 418.842 )
+mass = 10.0
+
+[node name="Ball2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 221.718, 126.321 )
+
+[node name="Ball4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4640, 856.519 )
+
+[node name="Ball5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4544, 926.525 )
+
+[node name="Platform15" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4480, 1026 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 898.434, 874.052 )
+
+[node name="Platform5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2112, 874.052 )
+
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1504, 874.012 )
+
+[node name="Platform4" parent="." instance=ExtResource( 4 )]
+position = Vector2( -224, 576 )
+
+[node name="Platform" parent="." instance=ExtResource( 5 )]
+position = Vector2( 287.368, 874.012 )
+
+[node name="Platform6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 4192, 874.052 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+limit_left = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Fire2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 945, 783 )
+z_index = 1
+
+[node name="Fire3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1569, 781.481 )
+
+[node name="Fire" parent="." instance=ExtResource( 7 )]
+position = Vector2( 32, 474.5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1.35229, 1.22884 )
+texture = ExtResource( 8 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="RespawnLine" type="Position2D" parent="."]
+position = Vector2( 0, 2160 )
+
+[node name="SmallPlatform" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2848, 935.255 )
+
+[node name="SmallPlatform2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3520, 1008 )
+
+[node name="Platform7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3168, 965 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform14" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4534.22, 807.475 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform17" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4937.82, 882 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform18" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5024, 775.481 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform19" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5120, 810 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform20" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5216, 702 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform21" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5952, 832.519 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform22" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6112, 900 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform23" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6240, 954 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3204.91, 828 )
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3319.87, 792 )
+rotation = -0.523598
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform10" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3424, 804 )
+rotation = 0.261799
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform11" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3552, 782.525 )
+rotation = 2.87979
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform12" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3680, 799.481 )
+rotation = 3.40339
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="Platform13" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3808, 792 )
+rotation = 2.87979
+scale = Vector2( 0.522086, 0.604214 )
+
+[node name="SmallPlatform3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4640, 1000.52 )
+rotation = -0.523598
+
+[node name="Fire4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5664, 778.265 )
+
+[node name="Fire5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6112, 874.052 )
+
+[node name="Fire6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 5344, 770.568 )
+
+[node name="HotPlatform" parent="." instance=ExtResource( 11 )]
+position = Vector2( 5568, 954 )
+
+[node name="Snowflake" parent="." instance=ExtResource( 12 )]
+position = Vector2( 5536, 687.552 )
+
+[node name="Snowflake2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 6240, 853.481 )
+scale = Vector2( 0.5, 0.5 )
+HealingAmount = 25.0
+
+[node name="Stone8" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9184, 928.519 )
+mass = 45.0
+
+[node name="Stone9" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9030.7, 928.519 )
+mass = 45.0
+
+[node name="Stone11" parent="." instance=ExtResource( 13 )]
+position = Vector2( 8373.43, 667.887 )
+
+[node name="Stone" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6835.18, 729.06 )
+
+[node name="HotPlatform2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6432, 916.759 )
+rotation = -0.523598
+scale = Vector2( 0.2, 0.2 )
+
+[node name="HotPlatform3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 8517.77, 1212 )
+
+[node name="HotPlatform4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 9247, 1215.39 )
+
+[node name="Ball7" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.486275, 0.921569, 0.968627, 1 )
+position = Vector2( 8736.77, 558 )
+mass = 20.0
+
+[node name="Ball9" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.486275, 0.921569, 0.968627, 1 )
+position = Vector2( 8558.46, 587.5 )
+mass = 25.0
+
+[node name="SmallPlatform4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 8496.46, 689.468 )
+rotation = -0.231757
+scale = Vector2( 1.14661, 0.626199 )
+
+[node name="Ball10" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.486275, 0.921569, 0.968627, 1 )
+position = Vector2( 8443, 613.673 )
+mass = 30.0
+
+[node name="Ball11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6944, 760.544 )
+mass = 5.0
+
+[node name="Stone7" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6784, 747.446 )
+
+[node name="Stone2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6880, 787.044 )
+
+[node name="Stone3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6886.88, 731.255 )
+
+[node name="Stone5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6835.18, 780 )
+
+[node name="Stone6" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6784, 820.927 )
+
+[node name="Stone4" parent="." instance=ExtResource( 13 )]
+position = Vector2( 6944, 820.052 )
+
+[node name="Platform16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 7328, 954 )
+
+[node name="Platform25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 7936, 954 )
+
+[node name="Platform24" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 6720, 954 )
+
+[node name="SmallPlatform5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 10513, 958.525 )
+z_index = -1
+
+[node name="Seesaw" parent="." instance=ExtResource( 16 )]
+position = Vector2( 9030.7, 972 )
+
+[node name="Seesaw2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 8485.77, 966.391 )
+
+[node name="Platform26" parent="." instance=ExtResource( 10 )]
+position = Vector2( 8507, 683.012 )
+rotation = -0.158105
+scale = Vector2( 1.5, 0.463415 )
+z_index = -1
+
+[node name="Platform27" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9120, 1038.05 )
+z_index = -1
+
+[node name="Platform29" parent="." instance=ExtResource( 10 )]
+position = Vector2( 8736, 1012.99 )
+z_index = -1
+
+[node name="Platform30" parent="." instance=ExtResource( 2 )]
+position = Vector2( 10321, 1065.56 )
+
+[node name="BackgroundMusic1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -80.0
+script = ExtResource( 18 )
+StartVolume = -20
+TransitionLength = 5
+
+[node name="FadeIn" type="Tween" parent="BackgroundMusic1"]
+
+[node name="BackgroundMusic2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -5.0
+
+[node name="FadeIn" type="Tween" parent="BackgroundMusic2"]
+
+[node name="Platform31" parent="." instance=ExtResource( 5 )]
+position = Vector2( 6720, 954 )
+
+[node name="StoneBackgound" type="Node2D" parent="."]
+position = Vector2( -18.132, 252 )
+
+[node name="Sprite" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 7104, 702 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, 208.519 )
+
+[node name="Sprite2" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 7104, 702 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, -252 )
+
+[node name="Sprite6" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 7168.43, 292.206 )
+scale = Vector2( 1.22645, 1.54595 )
+z_index = -2
+texture = ExtResource( 20 )
+offset = Vector2( -309.226, -252 )
+
+[node name="Sprite4" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 7811, 702 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, 208.519 )
+
+[node name="Sprite3" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 7808, 702 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, -252 )
+
+[node name="Sprite5" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 7808, 234 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, -252 )
+
+[node name="Sprite9" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 8517, 702 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, 208.519 )
+
+[node name="Sprite8" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 8514, 702 )
+z_index = -2
+texture = ExtResource( 19 )
+offset = Vector2( -309.226, -252 )
+
+[node name="Sprite7" type="Sprite" parent="StoneBackgound"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+position = Vector2( 8566.51, 289.97 )
+scale = Vector2( 1.17607, 1.54105 )
+z_index = -2
+texture = ExtResource( 21 )
+offset = Vector2( -309.226, -252 )
+
+[node name="Fire10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1265, 782.525 )
+
+[node name="Fire11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1425, 781.481 )
+
+[node name="Fire12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1729, 781.481 )
+
+[node name="Fire9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1105, 782.525 )
+
+[node name="Fire8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 773.942, 783 )
+
+[node name="Stone10" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9704.57, 856.519 )
+mass = 200.01
+
+[node name="Stone12" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9409, 858.09 )
+
+[node name="Stone14" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9601, 867.519 )
+
+[node name="Stone15" parent="." instance=ExtResource( 13 )]
+position = Vector2( 9505, 867.519 )
+
+[node name="Platform32" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9857, 831.59 )
+
+[node name="HotPlatform5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 9578.13, 1053 )
+
+[node name="Fire7" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 9249, 1071.45 )
+
+[node name="SnowflakeExplosion" parent="." instance=ExtResource( 24 )]
+position = Vector2( 9297, 855 )
+
+[node name="Snowflake3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 9313, 832.519 )
+
+[node name="Platform28" parent="." instance=ExtResource( 10 )]
+position = Vector2( 10177, 885.78 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Platform33" parent="." instance=ExtResource( 10 )]
+position = Vector2( 10049, 864 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Fire13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 10113, 991.875 )
+[connection signal="finished" from="BackgroundMusic1" to="." method="OnBackgroundMusic1Finished"]

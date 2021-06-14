@@ -1,0 +1,212 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Images/key.png" type="Texture" id=1]
+[ext_resource path="res://PilotGameControl.cs" type="Script" id=2]
+[ext_resource path="res://PilotGameHandle.cs" type="Script" id=3]
+[ext_resource path="res://Images/lock.png" type="Texture" id=4]
+
+[node name="PilotGameControl" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -704.0
+margin_bottom = -36.0
+texture = ExtResource( 4 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="."]
+margin_right = 1248.0
+margin_bottom = 936.0
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 400, 800 )
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Handle1" type="TextureButton" parent="Grid"]
+margin_right = 309.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle2" type="TextureButton" parent="Grid"]
+margin_left = 313.0
+margin_right = 622.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle3" type="TextureButton" parent="Grid"]
+margin_left = 626.0
+margin_right = 935.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle4" type="TextureButton" parent="Grid"]
+margin_left = 939.0
+margin_right = 1248.0
+margin_bottom = 231.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle5" type="TextureButton" parent="Grid"]
+margin_top = 235.0
+margin_right = 309.0
+margin_bottom = 466.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle6" type="TextureButton" parent="Grid"]
+margin_left = 313.0
+margin_top = 235.0
+margin_right = 622.0
+margin_bottom = 466.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle7" type="TextureButton" parent="Grid"]
+margin_left = 626.0
+margin_top = 235.0
+margin_right = 935.0
+margin_bottom = 466.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle8" type="TextureButton" parent="Grid"]
+margin_left = 939.0
+margin_top = 235.0
+margin_right = 1248.0
+margin_bottom = 466.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle9" type="TextureButton" parent="Grid"]
+margin_top = 470.0
+margin_right = 309.0
+margin_bottom = 701.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle10" type="TextureButton" parent="Grid"]
+margin_left = 313.0
+margin_top = 470.0
+margin_right = 622.0
+margin_bottom = 701.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle11" type="TextureButton" parent="Grid"]
+margin_left = 626.0
+margin_top = 470.0
+margin_right = 935.0
+margin_bottom = 701.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle12" type="TextureButton" parent="Grid"]
+margin_left = 939.0
+margin_top = 470.0
+margin_right = 1248.0
+margin_bottom = 701.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle13" type="TextureButton" parent="Grid"]
+margin_top = 705.0
+margin_right = 309.0
+margin_bottom = 936.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle14" type="TextureButton" parent="Grid"]
+margin_left = 313.0
+margin_top = 705.0
+margin_right = 622.0
+margin_bottom = 936.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle15" type="TextureButton" parent="Grid"]
+margin_left = 626.0
+margin_top = 705.0
+margin_right = 935.0
+margin_bottom = 936.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Handle16" type="TextureButton" parent="Grid"]
+margin_left = 939.0
+margin_top = 705.0
+margin_right = 1248.0
+margin_bottom = 936.0
+rect_pivot_offset = Vector2( 140, 90 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+script = ExtResource( 3 )
+[connection signal="pressed" from="Grid/Handle1" to="." method="OnHandlePressed" binds= [ 0 ]]
+[connection signal="pressed" from="Grid/Handle2" to="." method="OnHandlePressed" binds= [ 1 ]]
+[connection signal="pressed" from="Grid/Handle3" to="." method="OnHandlePressed" binds= [ 2 ]]
+[connection signal="pressed" from="Grid/Handle4" to="." method="OnHandlePressed" binds= [ 3 ]]
+[connection signal="pressed" from="Grid/Handle5" to="." method="OnHandlePressed" binds= [ 4 ]]
+[connection signal="pressed" from="Grid/Handle6" to="." method="OnHandlePressed" binds= [ 5 ]]
+[connection signal="pressed" from="Grid/Handle7" to="." method="OnHandlePressed" binds= [ 6 ]]
+[connection signal="pressed" from="Grid/Handle8" to="." method="OnHandlePressed" binds= [ 7 ]]
+[connection signal="pressed" from="Grid/Handle9" to="." method="OnHandlePressed" binds= [ 8 ]]
+[connection signal="pressed" from="Grid/Handle10" to="." method="OnHandlePressed" binds= [ 9 ]]
+[connection signal="pressed" from="Grid/Handle11" to="." method="OnHandlePressed" binds= [ 10 ]]
+[connection signal="pressed" from="Grid/Handle12" to="." method="OnHandlePressed" binds= [ 11 ]]
+[connection signal="pressed" from="Grid/Handle13" to="." method="OnHandlePressed" binds= [ 12 ]]
+[connection signal="pressed" from="Grid/Handle14" to="." method="OnHandlePressed" binds= [ 13 ]]
+[connection signal="pressed" from="Grid/Handle15" to="." method="OnHandlePressed" binds= [ 14 ]]
+[connection signal="pressed" from="Grid/Handle16" to="." method="OnHandlePressed" binds= [ 15 ]]

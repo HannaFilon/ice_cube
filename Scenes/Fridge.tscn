@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fridge.cs" type="Script" id=1]
+[ext_resource path="res://Images/fridge.png" type="Texture" id=2]
+[ext_resource path="res://Images/opened_fridge.png" type="Texture" id=3]
+[ext_resource path="res://Images/lock.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 227.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.9939
+height = 178.368
+
+[node name="FridgeActivation" type="Area2D"]
+script = ExtResource( 1 )
+OpenFridgeTexture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.975342, -0.630249 )
+shape = SubResource( 1 )
+
+[node name="FridgeBody" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="FridgeBody"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FridgeBody"]
+position = Vector2( 54.9309, 1.161 )
+scale = Vector2( 5, 5 )
+polygon = PoolVector2Array( -19.9447, -23.1466, 7.02455, -22.9229, 12.7445, -20.8041, 12.9396, 20.2579, 7.28257, 22.5011, -20.3109, 22.8799 )
+
+[node name="Lock" type="Sprite" parent="FridgeBody"]
+position = Vector2( 71.9339, 37.018 )
+scale = Vector2( 0.17, 0.17 )
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="VictoryActivation" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryActivation"]
+position = Vector2( -48.188, 2.20382 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="OnBodyEnteredActivationArea"]
+[connection signal="body_exited" from="." to="." method="OnBodyExitedActivationArea"]
+[connection signal="body_entered" from="VictoryActivation" to="." method="OnBodyEnteredVictoryActivationArea"]
