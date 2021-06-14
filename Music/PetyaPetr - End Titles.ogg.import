@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PetyaPetr - End Titles.ogg-502832cecce2ddd07577e8d2ced50b34.oggstr"
+
+[deps]
+
+source_file="res://Music/PetyaPetr - End Titles.ogg"
+dest_files=[ "res://.import/PetyaPetr - End Titles.ogg-502832cecce2ddd07577e8d2ced50b34.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

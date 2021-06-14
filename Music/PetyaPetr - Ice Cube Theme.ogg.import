@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PetyaPetr - Ice Cube Theme.ogg-e81d0601e4e722932c63f82d3293623f.oggstr"
+
+[deps]
+
+source_file="res://Music/PetyaPetr - Ice Cube Theme.ogg"
+dest_files=[ "res://.import/PetyaPetr - Ice Cube Theme.ogg-e81d0601e4e722932c63f82d3293623f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
