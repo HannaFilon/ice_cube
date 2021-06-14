@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PetyaPetr - Under Ground.ogg-ca9f677cd812060c5ae362c0a1787eef.oggstr"
+
+[deps]
+
+source_file="res://Music/PetyaPetr - Under Ground.ogg"
+dest_files=[ "res://.import/PetyaPetr - Under Ground.ogg-ca9f677cd812060c5ae362c0a1787eef.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
